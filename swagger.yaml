@@ -1,0 +1,134 @@
+swagger: '2.0'
+info:
+  title: TypeScript CRUD API (Backend)
+  description: https://github.com/henriqueregatieri/typescript-typeorm-crud-api
+
+host: localhost:4000
+schemes:
+  - http
+
+paths:
+  /products:
+    get:
+      tags: [products]
+      parameters:
+        - name: relations[]
+          in: query
+          description: 'Which relations should be returned (e.g.: email)'
+      responses:
+        200:
+          description: OK
+
+    post:
+      tags: [products]
+      parameters:
+        - name: body
+          in: body
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/PRODUCT'
+
+  /products/{id}:
+    get:
+      tags: [products]
+      parameters:
+        - name: id
+          in: path
+      responses:
+        200:
+          description: OK
+
+    put:
+      tags: [products]
+      parameters:
+        - name: id
+          in: path
+        - name: body
+          in: body
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/PRODUCT'
+
+    delete:
+      tags: [products]
+      parameters:
+        - name: id
+          in: path
+      responses:
+        200:
+          description: OK
+
+  /emails:
+    get:
+      tags: [emails]
+      parameters:
+        - name: relations[]
+          in: query
+          description: 'Which relations should be returned (e.g.: products)'
+      responses:
+        200:
+          description: OK
+
+    post:
+      tags: [emails]
+      parameters:
+        - name: body
+          in: body
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/PRODUCT'
+
+  /emails/{id}:
+    get:
+      tags: [emails]
+      parameters:
+        - name: id
+          in: path
+      responses:
+        200:
+          description: OK
+
+    put:
+      tags: [emails]
+      parameters:
+        - name: id
+          in: path
+        - name: body
+          in: body
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/PRODUCT'
+
+    delete:
+      tags: [emails]
+      parameters:
+        - name: id
+          in: path
+      responses:
+        200:
+          description: OK
+
+definitions:
+  PRODUCT:
+    type: object
+    properties:
+      title:
+        type: string
+      text:
+        type: string
+      email:
+        type: number
+
+  EMAIL:
+    type: object
+    properties:
+      name:
+        type: string

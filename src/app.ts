@@ -3,6 +3,7 @@ import cors from 'cors';
 import { productsRoutes } from './routes/products';
 import { emailsRoutes } from './routes/emails';
 import { rateLimiter } from './middlewares/rateLimiter';
+import { docsRoutes } from './routes/docs';
 
 export const app = async (port: number) => {
   // create and setup express app
@@ -15,6 +16,7 @@ export const app = async (port: number) => {
   const router = express.Router();
   app.use(productsRoutes(router));
   app.use(emailsRoutes(router));
+  app.use(docsRoutes(router));
 
   // start express server
   app.listen(port);
