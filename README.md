@@ -1,23 +1,14 @@
 # TypeScript CRUD API (Backend)
 
-#### A guide to build a TypeScript CRUD API (Backend) with TypeORM.
+A guide to build a TypeScript CRUD API (Backend) with TypeORM based on https://github.com/jp7internet/typescript-crud-api
 
 ####  Live Demo
 
-* This API: https://typescript-crud-api.herokuapp.com
-* Frontend: https://jp7internet.github.io/typescript-crud
+* This API: https://intense-bastion-57778.herokuapp.com/
 
 #### Step-by-Step Tutorial
 
 https://github.com/jp7internet/typescript-crud-api/wiki
-
-#### Screenshots
-
-| Swagger | Entities |
-| ------------- | ------------- |
-| ![Swagger](https://github.com/jp7internet/typescript-crud-api/wiki/images/swagger.png) | ![Swagger](https://github.com/jp7internet/typescript-crud-api/wiki/images/entities.png) |
-
-https://github.com/jp7internet/typescript-crud-api/wiki/Screenshots
 
 #### Includes
 
