@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import { productsRoutes } from './routes/products';
+import { emailsRoutes } from './routes/emails';
 
 export const app = async (port: number) => {
-
   // create and setup express app
   const app = express();
   app.use(express.json());
@@ -12,6 +12,7 @@ export const app = async (port: number) => {
 
   const router = express.Router();
   app.use(productsRoutes(router));
+  app.use(emailsRoutes(router));
 
   // start express server
   app.listen(port);

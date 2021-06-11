@@ -4,13 +4,13 @@ import { Request, Response } from 'express';
 export const recordsController = <T>(repository: Repository<T>) => {
   const findAll = async (req: Request, res: Response) => {
     // return all records
-    const results = await repository.find();
+    const results = await repository.find(req.query);
     return res.send(results);
   };
 
   const findOne = async (req: Request, res: Response) => {
     // return one record by id
-    const results = await repository.findOne(req.params.id);
+    const results = await repository.findOne(req.params.id, req.query);
     return res.send(results);
   };
 

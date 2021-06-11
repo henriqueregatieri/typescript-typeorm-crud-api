@@ -1,5 +1,6 @@
-import { Entity, Column } from 'typeorm';
+import { Entity, Column, ManyToOne } from 'typeorm';
 import { Record } from './Record';
+import { Email } from './Email';
 
 @Entity()
 export class Product extends Record {
@@ -8,4 +9,9 @@ export class Product extends Record {
 
   @Column()
   text: string;
+
+  @ManyToOne((type) => Email, (email) => email.products, {
+    onDelete: 'CASCADE',
+  })
+  email: Email;
 }
